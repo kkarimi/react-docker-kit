@@ -39,11 +39,6 @@ def connect():
     print 'disconnected to client'
 
 
-@socketio.on('my event')
-def test_message(message):
-    emit('my response', {'data': 'got it!'})
-
-
 @app.route('/list')
 def list():
     i = inspect()
