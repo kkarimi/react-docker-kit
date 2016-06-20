@@ -1,14 +1,10 @@
 import autobind from 'autobind-decorator';
-
 import React, { Component } from 'react';
-
 import io from 'socket.io-client';
-const serverUrl = 'http://192.168.99.100';
-const port = '5000';
-
-let socket = io.connect(serverUrl+':'+port+'/cruncher');
-
 import Progress from './components/Progress';
+
+import { serverUrl, port } from './config';
+let socket = io.connect(`${serverUrl}:${port}/cruncher`);
 
 export default class App extends Component {
   constructor () {
@@ -64,7 +60,7 @@ export default class App extends Component {
       this._reset();
       const { n1, n2 } = this.refs;
       fetch(`${serverUrl}/add/${n1.value}/${n2.value}`, {
-        method: 'get'
+        method: 'post'
       }).then(function(response) {
         console.info(response);
       }).catch(function(err) {
@@ -106,7 +102,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="flex flex-center p2" style={{minHeight: '100vh'}}>
+      <div className="flex flex-center p2" style={{ minHeight: '100vh' }}>
           <div className="bold p2 mx-auto bg-silver">
             <h1 className="center">Number Cruncher</h1>
             {this.renderCalc()}
