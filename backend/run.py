@@ -1,4 +1,7 @@
-from app import app
+#!/bin/env python
+from app import create_app, socketio
+
+app = create_app(debug=True)
 
 if __name__ == '__main__':
-    app.run()
+    socketio.run(app, "0.0.0.0", port=5000)

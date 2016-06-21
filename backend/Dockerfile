@@ -9,6 +9,6 @@ ADD . /backend
 
 ENTRYPOINT ["python"]
 
-CMD ["run.py"]
+CMD ["/backend/app/app.py"]
 
 EXPOSE 5000
