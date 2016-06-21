@@ -1,6 +1,0 @@
-celery
-Flask
-Flask-SocketIO
-redis
-gevent
-flask-cors

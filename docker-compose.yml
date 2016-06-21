@@ -2,7 +2,7 @@ version: '2'
 services:
   app:
     build:
-      context: ./app
+      context: ./backend
       dockerfile: Dockerfile
     restart: always
     ports:
@@ -25,7 +25,7 @@ services:
 
   worker:
     build:
-      context: ./app-celery
+      context: ./celery
       dockerfile: Dockerfile
     depends_on:
       - redis
@@ -34,7 +34,7 @@ services:
 
   monitor:
     build:
-      context: ./app-celery
+      context: ./celery
       dockerfile: Dockerfile
     ports:
       - "5555:5555"
