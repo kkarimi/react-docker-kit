@@ -5,7 +5,7 @@ DEBUG = True
 env = os.environ
 
 HOST = os.environ.get("HOST") if "HOST" in os.environ else "0.0.0.0"
-PORT = os.environ.get["PORT"] if "PORT" in os.environ else "5000"
+PORT = os.environ.get("PORT") if "PORT" in os.environ else "5000"
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
