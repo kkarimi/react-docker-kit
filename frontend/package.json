@@ -4,8 +4,8 @@
   "description": "ReactJS FE",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "production": "webpack -p"
+    "start": "NODE_ENV=dev webpack-dev-server",
+    "production": "NODE_ENV=production webpack -p"
   },
   "author": "Kash Karimi",
   "license": "ISC",

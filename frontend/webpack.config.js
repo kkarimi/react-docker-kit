@@ -24,11 +24,9 @@ module.exports = {
     root: path.join(__dirname, 'src')
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env':{
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
+    new webpack.EnvironmentPlugin([
+      "NODE_ENV"
+    ]),
     new HtmlWebpackPlugin({
       inject: true,
       template: 'src/index.html'

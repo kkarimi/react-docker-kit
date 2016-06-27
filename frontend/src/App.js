@@ -59,7 +59,7 @@ export default class App extends Component {
     if (e) {
       this._reset();
       const { n1, n2 } = this.refs;
-      fetch(`${serverUrl}/add/${n1.value}/${n2.value}`, {
+      fetch(`${serverUrl}:${port}/add/${n1.value}/${n2.value}`, {
         method: 'post'
       }).then(function(response) {
         console.info(response);
