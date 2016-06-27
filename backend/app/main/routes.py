@@ -1,7 +1,7 @@
 from . import main
 import time
 from flask import session, redirect, url_for, render_template, request, url_for, jsonify
-from backend.app.worker import celery
+from worker import celery
 from celery.task.control import inspect, revoke
 import celery.states as states
 from flask_cors import CORS, cross_origin
