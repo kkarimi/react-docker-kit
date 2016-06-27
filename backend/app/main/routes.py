@@ -8,6 +8,7 @@ from flask_cors import CORS, cross_origin
 
 from .. import socketio
 
+
 @main.route('/')
 def hello():
     return "You should be using the SPA entry. But you can <a href='/add/1/2'>try me out</a>."
